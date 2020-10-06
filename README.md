@@ -1,5 +1,6 @@
-# TfL-status
-Gives regularly updated information about various services including weather/travel.
+# Dashboard
+
+Web-based dashboard containing date/time information as well as London Underground information and a weather forecast using the Dark Sky API.
 
 Testing instructions:
 
