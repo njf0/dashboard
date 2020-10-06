@@ -1,0 +1,605 @@
+@font-face { 
+  font-family: 'avenir';
+  src: url("../avenir.otf") format('opentype');
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: scale-down;
+  height: auto;
+  width: auto;
+  min-height: 50%;
+  max-height: 80%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.2fr repeat(2, 1fr) 0.2fr;
+  gap: 0.8em 0.8em;
+  grid-template-areas: "datetime datetime datetime datetime"
+                       "tube tube weather weather"
+                       "tube tube temp temp"
+                       "footer footer footer footer";
+  background-color: lightgrey;
+  font-family: 'avenir';
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.25em;
+}
+
+.datetime {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "date time";
+  grid-area: datetime;
+  background-color: white;
+}
+
+  .date {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 1em;
+  }
+
+  .time {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 1em;
+  }
+
+.tube {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 0px 0px;
+  grid-template-areas: "tube-bakerloo tube-bakerloo"
+                       "tube-circle tube-circle"
+                       "tube-central tube-central"
+                       "tube-district tube-district"
+                       "tube-hsc tube-hsc"
+                       "tube-jubilee tube-jubilee"
+                       "tube-metropolitan tube-metropolitan"
+                       "tube-northern tube-northern"
+                       "tube-piccadilly tube-piccadilly"
+                       "tube-victoria tube-victoria"
+                       "tube-wc tube-wc"
+                       "mode-status mode-status";
+  grid-area: tube;
+}
+
+  .good-service{
+    color: green;
+  }
+
+  .minor-delays{
+    color: darkorange;
+  }
+
+  .severe-delays{
+    color: red;
+  }
+
+  .tube-bakerloo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "bakerloo-main bakerloo-status";
+    grid-area: tube-bakerloo;
+  }
+
+    .bakerloo-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 1;
+      background-color: rgb(178, 99, 0);
+      color: rgb(255, 255, 255);
+      }
+
+    .bakerloo-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 1;
+      background-color: white;
+      text-align: center;
+      border-radius: 0 1em 0 0;
+      }
+
+  .tube-circle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "circle-main circle-status";
+    grid-area: tube-circle;
+  }
+
+    .circle-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 2;
+      background-color: rgb(255, 241, 41);
+      text-align: center;
+      color: rgb(0, 25, 168);
+    }
+
+    .circle-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 2;
+      background-color: white;
+      text-align: center;
+    }
+
+  .tube-central {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "central-main central-status";
+    grid-area: tube-central;
+  }
+
+    .central-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 3;
+      background-color: rgb(220, 36, 31);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .central-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 3;
+      background-color: white;
+      text-align: center;
+    }
+
+  .tube-district {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "district-main district-status";
+    grid-area: tube-district;
+  }
+
+    .district-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 4;
+      background-color: rgb(0, 125, 50);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .district-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 4;
+      background-color: white;
+      text-align: center;
+    }
+
+  .tube-hsc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "hsc-main hsc-status";
+    grid-area: tube-hsc;
+  }
+
+    .hsc-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 5;
+      background-color: rgb(244, 169, 190);
+      text-align: center;
+      color: rgb(0, 25, 168);
+    }
+    
+    .hsc-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 5;
+      background-color: white;
+      text-align: center;
+    }
+
+
+  .tube-jubilee {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "jubilee-main jubilee-status";
+    grid-area: tube-jubilee;
+  }
+
+    .jubilee-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 6;
+      background-color: rgb(161, 165, 167);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .jubilee-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 6;
+      background-color: white;
+      text-align: center;
+    }
+
+
+  .tube-metropolitan {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "metropolitan-main metropolitan-status";
+    grid-area: tube-metropolitan;
+  }
+
+    .metropolitan-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 7;
+      background-color: rgb(155, 0, 88);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .metropolitan-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 7;
+      background-color: white;
+      text-align: center;
+}
+
+  .tube-northern {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "northern-main northern-status";
+    grid-area: tube-northern;
+  }
+
+    .northern-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 8;
+      background-color: rgb(0, 0, 0);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .northern-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 8;
+      background-color: white;
+      text-align: center;
+    }
+
+  .tube-piccadilly {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "piccadilly-main piccadilly-status";
+    grid-area: tube-piccadilly;
+  }
+
+    .piccadilly-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 9;
+      background-color: rgb(0, 25, 168);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .piccadilly-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 9;
+      background-color: white;
+      text-align: center;
+    }
+
+  .tube-victoria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "victoria-main victoria-status";
+    grid-area: tube-victoria;
+  }
+
+    .victoria-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 10;
+      background-color: rgb(0, 152, 216);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    .victoria-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 10;
+      background-color: white;
+      text-align: center;
+    }
+
+  .tube-wc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "wc-main wc-status";
+    grid-area: tube-wc;
+  }
+
+    .wc-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 11;
+      background-color: rgb(147, 206, 186);
+      text-align: center;
+      color: rgb(0, 25, 168);
+    }
+
+    .wc-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 11;
+      background-color: white;
+      text-align: center;
+
+    }
+
+  .mode-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 12;
+    grid-column: 1 / 3;
+    background-color: rgb(255, 206, 0);
+    border-radius: 0 0 1em 0;
+  }
+
+.weather {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+  grid-template-areas: "weather-today weather-forecast";
+  grid-area: weather;
+}
+  
+  .weather-today {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25vh repeat(2, auto);
+    gap: 0.8em 0;
+    grid-template-areas: "today-icon" "today-now" "today-desc";
+    grid-area: weather-today;
+  }
+
+    .today-icon {
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      text-align: center;
+    }
+
+    .today-now {
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      text-align: center;
+    }
+
+    .today-desc {
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      text-align: center;
+    }
+
+.weather-forecast {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+  gap: 10px 0px;
+  grid-template-areas: "forecast-day1" "forecast-day2" "forecast-day3" "forecast-day4" "forecast-day5";
+  grid-area: weather-forecast;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+  .forecast-day1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 3vw repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "day1-name day-temp day-icon day-rain day-wind";
+    grid-area: forecast-day1;
+    grid-row: 1;
+    background-color: white;
+    
+  }
+
+    .day-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 1;
+    }
+
+    .day-temp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+    }
+
+    .day-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 3;
+    }
+    
+    .day-rain {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 4;
+    }
+
+    .day-wind {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 5;
+    }
+
+  .forecast-day2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "day-name day-temp day-icon day-rain day-wind";
+    grid-area: forecast-day2;
+    grid-row: 2;
+    background-color: white;
+  }
+
+  .forecast-day3 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "day-name day-temp day-icon day-rain day-wind";
+    grid-area: forecast-day3;
+    grid-row: 3;
+    background-color: white;
+  }
+
+
+  .forecast-day4 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "day-name day-temp day-icon day-rain day-wind";
+    grid-area: forecast-day4;
+    grid-row: 4;
+    background-color: white;
+  }
+
+
+  .forecast-day5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "day-name day-time day-icon day-rain day-wind";
+    grid-area: forecast-day5;
+    grid-row: 5;
+    background-color: white;
+  }
+
+.temp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+  grid-template-areas: ". .";
+  grid-area: temp;
+  background-color: white;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 10px;
+  grid-template-areas: ". .";
+  grid-area: footer;
+  background-color: white;
+  text-align: center;
+}

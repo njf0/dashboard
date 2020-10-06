@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--https://grid.layoutit.com/?id=jrRDYbi-->
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+        <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+        <meta http-equiv="refresh" content="600">
+        <meta http-equiv="Content-Security-Policy" content="default-src *;">
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="datetime">
+                <div class="date" id="date"></div>
+                <div class="time" id="time"></div>
+
+            </div>
+            <div class="tube">
+                <div class="bakerloo-main">Bakerloo</div>
+                <div class="bakerloo-status" id="bakerloo-status"></div>
+                <div class="circle-main">Circle</div>
+                <div class="circle-status" id="circle-status"></div>
+                <div class="central-main">Central</div>
+                <div class="central-status" id="central-status"></div>
+                <div class="district-main">District</div>
+                <div class="district-status" id="district-status"></div>
+                <div class="hsc-main">Hammersmith &amp; City</div>
+                <div class="hsc-status" id="hammersmith-city-status"></div>
+                <div class="jubilee-main">Jubilee</div>
+                <div class="jubilee-status" id="jubilee-status"></div>
+                <div class="metropolitan-main">Metropolitan</div>
+                <div class="metropolitan-status" id="metropolitan-status"></div>
+                <div class="northern-main">Northern</div>
+                <div class="northern-status" id="northern-status"></div>
+                <div class="piccadilly-main">Piccadilly</div>
+                <div class="piccadilly-status" id="piccadilly-status"></div>
+                <div class="victoria-main">Victoria</div>
+                <div class="victoria-status" id="victoria-status"></div>
+                <div class="wc-main">Waterloo &amp; City</div>
+                <div class="wc-status" id="waterloo-city-status"></div>
+                <div class="mode-status" id="mode-status"></div>
+            </div>
+            <div class="weather">
+                <div class="weather-today">
+                    <div class="today-current">
+                        <div class="today-icon">
+                            <img src="" alt="today_icon" class="today-img" id="today-icon">
+                        </div>
+                        <div class="today-now" id="today-now"></div>
+                        <div class="today-desc" id="today-desc"></div>
+                    </div>
+                    <div class="today-forecast">
+                            <div class="today-feel" id="today-feel"></div>
+                            <div class="today-moon" id="today-minmax"></div>
+                            <div class="today-rain" id="today-rain"></div>
+                            <div class="today-wind" id="today-wind"></div>
+                            <div class="today-sun" id="today-sun"></div>
+                    </div>
+                </div>
+                <div class="weather-forecast">
+                    <div class="forecast-day1">
+                        <div class="day-name" id="day1-name"></div>
+                        <div class="day-temp" id="day1-minmax"></div>
+                        <div class="day-icon">
+                            <img src="" alt="day1_icon" class="forecast-img" id="day1-icon">
+                        </div>
+                        <div class="day-rain" id="day1-rain"></div>
+                        <div class="day-wind" id="day1-wind"></div>
+                    </div>    
+                    <div class="forecast-day2">
+                            <div class="day-name" id="day2-name"></div>
+                            <div class="day-temp" id="day2-minmax"></div>
+                            <div class="day-icon">
+                                <img src="" alt="day2_icon" class="forecast-img" id="day2-icon">
+                            </div>
+                            <div class="day-rain" id="day2-rain"></div>
+                            <div class="day-wind" id="day2-wind"></div>
+                    </div>
+                    <div class="forecast-day3">
+                            <div class="day-name" id="day3-name"></div>
+                            <div class="day-temp" id="day3-minmax"></div>
+                            <div class="day-icon">
+                                <img src="" alt="day3_icon" class="forecast-img" id="day3-icon">
+                            </div>
+                            <div class="day-rain" id="day3-rain"></div>
+                            <div class="day-wind" id="day3-wind"></div>
+                    </div>
+                    <div class="forecast-day4">
+                            <div class="day-name" id="day4-name"></div>
+                            <div class="day-temp" id="day4-minmax"></div>
+                            <div class="day-icon">
+                                <img src="" alt="day4_icon" class="forecast-img" id="day4-icon">
+                            </div>
+                            <div class="day-rain" id="day4-rain"></div>
+                            <div class="day-wind" id="day4-wind"></div>
+                    </div>
+                    <div class="forecast-day5">
+                            <div class="day-name" id="day5-name"></div>
+                            <div class="day-temp" id="day5-minmax"></div>
+                            <div class="day-icon">
+                                <img src="" alt="day5_icon" class="forecast-img" id="day5-icon">
+                            </div>
+                            <div class="day-rain" id="day5-rain"></div>
+                            <div class="day-wind" id="day5-wind"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="onthisday" id="onthisday"></div>
+        </div>
+    </body>
+</html>
