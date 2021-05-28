@@ -49,20 +49,35 @@ function get_weather() {
 
             if (d_or_n == "morning") {
                 var ton_min = Math.round(response.daily.data[0].temperatureLow);
-                var sun_rise = convert_date(response.daily.data[0].sunriseTime)
-                document.getElementById("today-minmax").innerHTML = `Tonight's low is <strong>${ton_min}°</strong>.`;
+                var ton_min_time = response.daily.data[0].temperatureLowTime;
+                if (ton_min_time > time) {
+                    is_was = 'is'
+                }
+                else {is_was = 'was'}
+                var sun_rise = convert_date(response.daily.data[0].sunriseTime);
+                document.getElementById("today-minmax").innerHTML = `Tonight's low ${is_was} <strong>${ton_min}°</strong>.`;
                 document.getElementById("today-sun").innerHTML = `Sunrise is at <strong>${sun_rise}</strong>.`;
             }
             else if (d_or_n == "day") {
                 var tod_max = Math.round(response.daily.data[0].temperatureHigh);
-                var sun_set = convert_date(response.daily.data[0].sunsetTime)
-                document.getElementById("today-minmax").innerHTML = `Today's high is <strong>${tod_max}°</strong>.`;
+                var sun_set = convert_date(response.daily.data[0].sunsetTime);
+                var tod_max_time = response.daily.data[0].temperatureHighTime;
+                if (tod_max_time > time) {
+                    is_was = 'is'
+                }
+                else {is_was = 'was'}
+                document.getElementById("today-minmax").innerHTML = `Today's high ${is_was} <strong>${tod_max}°</strong>.`;
                 document.getElementById("today-sun").innerHTML = `Sunset is at <strong>${sun_set}</strong>.`;
             }
             else if (d_or_n == "night") {
                 var ton_min = Math.round(response.daily.data[1].temperatureLow);
-                var sun_rise = convert_date(response.daily.data[1].sunriseTime)
-                document.getElementById("today-minmax").innerHTML = `Tonight's low is <strong>${ton_min}°</strong>.`;
+                var sun_rise = convert_date(response.daily.data[1].sunriseTime);
+                var ton_min_time = response.daily.data[1].temperatureLowTime;
+                if (ton_min_time > time) {
+                    is_was = 'is'
+                }
+                else {is_was = 'was'}
+                document.getElementById("today-minmax").innerHTML = `Tonight's low ${is_was} <strong>${ton_min}°</strong>.`;
                 document.getElementById("today-sun").innerHTML = `Sunrise is at <strong>${sun_rise}</strong>.`;
             }
 
@@ -128,7 +143,6 @@ function get_tube_status() {
                     div.classList.add("severe-delays");
                 }
                 var status_description = response[i].lineStatuses[0].reason;
-                console.log(status_description);
                 if (status_description == undefined) {
                     continue
                 }
@@ -215,7 +229,7 @@ function get_and_format_datetime() {
     setInterval(get_and_format_datetime, 1000)
 
 }
-
+/*
 function get_events() {
     
     var d = new Date();
@@ -235,12 +249,12 @@ function get_events() {
         document.getElementById("onthisday").innerText = str;
         console.log(str);
 })}
+*/
 
 function main() {
     get_and_format_datetime();
     get_tube_status();
     get_weather();
-    get_events();
 }
 
 window.onload = main;
